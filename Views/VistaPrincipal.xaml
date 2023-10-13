@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Local="clr-namespace:PintarObjetos.Graficos"
+             x:Class="PintarObjetos.Views.VistaPrincipal"
+             Title="VistaPrincipal"
+             BackgroundColor="LightCyan">
+    <ContentPage.Resources>
+        <Local:ObjetoPintadoSolido x:Key="RectanguloSolido"/>
+        <Local:PintarConImagen x:Key="Imagen"/>
+        <Local:PintarConPatron x:Key="Patron"/>
+        <Local:DegradadoLinealHor x:Key="DegradadoHorizontalLineal"/>
+        <Local:DegradadoLinealVert x:Key="DegradadoVerticalLineal"/>
+        <Local:DegradadoLinealDiag x:Key="DegradadoDiagonalLineal"/>
+        <Local:DegradadoRadialCentr x:Key="DegradadoCentralRadial"/>
+        <Local:DegradadoRadialStart x:Key="DegradadoStartRadial"/>
+        <Local:DegradadoRadialEnd x:Key="DegradadoEndRadial"/>
+    </ContentPage.Resources>
+    <ScrollView>
+    <VerticalStackLayout HorizontalOptions="Center" Margin="20,20">
+
+        <GraphicsView Drawable="{StaticResource RectanguloSolido}"
+                      HeightRequest="300"
+                      WidthRequest="400"/>
+        <GraphicsView Drawable="{StaticResource Imagen}"
+                      HeightRequest="400"
+                      WidthRequest="800"
+                      Margin="330,0,0,0"/>
+        <GraphicsView Drawable="{StaticResource Patron}"
+                      HeightRequest="200"
+                      WidthRequest="200"/>
+        <HorizontalStackLayout Margin="20,20" HorizontalOptions="Center">
+            <GraphicsView Drawable="{StaticResource DegradadoHorizontalLineal}"
+                      WidthRequest="250"
+                      HeightRequest="250"/>
+            <GraphicsView Drawable="{StaticResource DegradadoVerticalLineal}"
+                          WidthRequest="250"
+                          HeightRequest="250"/>
+            <GraphicsView Drawable="{StaticResource DegradadoDiagonalLineal}"
+                          WidthRequest="250"
+                          HeightRequest="250"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="20,20" HorizontalOptions="Center">
+            <GraphicsView Drawable="{StaticResource DegradadoCentralRadial}"
+                          WidthRequest="250"
+                          HeightRequest="250"/>
+            <GraphicsView Drawable="{StaticResource DegradadoStartRadial}"
+                          WidthRequest="250"
+                          HeightRequest="250"/>
+            <GraphicsView Drawable="{StaticResource DegradadoEndRadial}"
+                          WidthRequest="250"
+                          HeightRequest="250"/>
+        </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
